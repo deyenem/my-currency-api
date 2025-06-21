@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   
   try {
-    const API_KEY = process.env.EXCHANGE_API_KEY || 'YOUR_API_KEY_HERE';
+    const API_KEY = process.env.EXCHANGE_API_KEY || 'prj_Pxiyf1zoTFnfKFzkaEN6rU1hSnz4';
     
     const response = await fetch(
       `https://v6.exchangerate-api.com/v6/${API_KEY}/codes`
@@ -16,7 +16,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Transform the data into a more useful format
     const currencies = data.supported_codes.map(([code, name]) => ({
       code,
       name
