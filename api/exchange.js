@@ -1,30 +1,25 @@
 export default async function handler(req, res) {
-  // Set CORS headers to allow requests from any website
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight requests
   if (req.method === 'OPTIONS') {
     res.status(200).end();
     return;
   }
 
   try {
-    // Your ExchangeRate-API key (you'll need to replace this)
-    const API_KEY = process.env.EXCHANGE_API_KEY || '6b2256511d4d75a4aea7bfaf';
+    const API_KEY = process.env.EXCHANGE_API_KEY || 'prj_Pxiyf1zoTFnfKFzkaEN6rU1hSnz4';
     
     // Get parameters from the request
     const { from = 'USD', to = 'EUR', amount = 1 } = req.query;
     
-    // Validate currency codes (basic validation)
     if (!from || !to) {
       return res.status(400).json({
         error: 'Missing required parameters: from and to currencies'
       });
     }
 
-    // Fetch data from ExchangeRate-API
     const response = await fetch(
       `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${from}/${to}`
     );
@@ -42,10 +37,8 @@ export default async function handler(req, res) {
       });
     }
 
-    // Calculate converted amount
     const convertedAmount = (parseFloat(amount) * data.conversion_rate).toFixed(2);
     
-    // Return your custom response
     res.status(200).json({
       success: true,
       from: from.toUpperCase(),
