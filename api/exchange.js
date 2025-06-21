@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const API_KEY = process.env.EXCHANGE_API_KEY || 'YOUR_API_KEY_HERE';
+    const API_KEY = process.env.EXCHANGE_API_KEY || '6b2256511d4d75a4aea7bfaf';
     
     const { from = 'USD', to = 'EUR', amount = 1 } = req.query;
     
