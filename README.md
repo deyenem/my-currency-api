@@ -1,6 +1,3 @@
-// File: README.md
-// Documentation for your API
-
 # My Currency Exchange API
 
 A simple and free currency exchange API built with Vercel.
