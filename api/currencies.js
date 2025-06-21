@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   
   try {
-    const API_KEY = process.env.EXCHANGE_API_KEY || 'prj_Pxiyf1zoTFnfKFzkaEN6rU1hSnz4';
+    const API_KEY = process.env.EXCHANGE_API_KEY || '6b2256511d4d75a4aea7bfaf';
     
     const response = await fetch(
       `https://v6.exchangerate-api.com/v6/${API_KEY}/codes`
