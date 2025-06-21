@@ -1,6 +1,3 @@
-// File: api/exchange.js
-// This is your main API endpoint
-
 export default async function handler(req, res) {
   // Set CORS headers to allow requests from any website
   res.setHeader('Access-Control-Allow-Origin', '*');
