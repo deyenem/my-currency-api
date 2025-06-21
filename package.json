@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "A simple currency exchange API",
   "main": "api/exchange.js",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "vercel build"
-  },
+  "scripts": {},
   "dependencies": {},
   "engines": {
     "node": "18.x"
