@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const API_KEY = process.env.EXCHANGE_API_KEY || 'prj_Pxiyf1zoTFnfKFzkaEN6rU1hSnz4';
+    const API_KEY = process.env.EXCHANGE_API_KEY || '6b2256511d4d75a4aea7bfaf';
     
     // Get parameters from the request
     const { from = 'USD', to = 'EUR', amount = 1 } = req.query;
